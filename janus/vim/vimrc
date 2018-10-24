@@ -69,4 +69,6 @@ endif
 
 let g:syntastic_mode_map={ "mode": "passive" }
 
+" testing comment
+
 " .vimrc.after is loaded after the plugins have loaded
