@@ -55,30 +55,26 @@ task :folders do
 end
 
 task :update do
-  is_windows = RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
-  redirect_out = is_windows ? '> NUL' : '> /dev/null'
-  redirect_out_err = is_windows ? '> NUL 2> NUL' : '&> /dev/null'
-
   puts "Cleaning the janus folder"
-  `git clean -xdf -- janus #{redirect_out_err}`
+  `git clean -xdf -- janus`
   `git ls-files --exclude-standard --others -- janus`.split("\n").each do |untracked|
     FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
   end
 
   puts "Pulling latest changes"
-  `git pull #{redirect_out}`
+  `git pull`
 
   puts "Cleaning the janus folder"
-  `git clean -xdf -- janus #{redirect_out_err}`
+  `git clean -xdf -- janus`
   `git ls-files --exclude-standard --others -- janus`.split("\n").each do |untracked|
     FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
   end
 
   puts "Synchronising submodules urls"
-  `git submodule sync #{redirect_out}`
+  `git submodule sync`
 
   puts "Updating the submodules"
-  `git submodule update --init #{redirect_out}`
+  `git submodule update --init`
 end
 
 task :install => [:folders, :link_vim_conf_files] do
