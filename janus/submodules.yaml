@@ -97,4 +97,4 @@ submodules:
     vimux:
     multiple-cursors:
     visualstar:
-    vim-tmux-navigator
+    vim-tmux-navigator:
