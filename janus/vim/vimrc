@@ -40,4 +40,13 @@ exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
 " Load all groups, custom dir, and janus core
 call janus#load_pathogen()
 
+
+highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+autocmd BufWritePre * :%s/\s\+$//e
 " .vimrc.after is loaded after the plugins have loaded
