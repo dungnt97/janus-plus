@@ -54,4 +54,6 @@ let g:vroom_use_vimux = 1
 
 noremap R "_d
 
+let mapleader = " "
+
 " .vimrc.after is loaded after the plugins have loaded
