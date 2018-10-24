@@ -62,7 +62,7 @@ installer](https://github.com/carlhuda/janus/blob/master/bootstrap.sh)
 Janus.
 
 ```bash
-$ curl -L https://raw.github.com/remitano/janus-tmux/master/bootstrap.sh | bash
+$ curl -L https://raw.github.com/remitano/janus-tmux/master/bootstrap.rb | ruby
 ```
 
 ## Customization
