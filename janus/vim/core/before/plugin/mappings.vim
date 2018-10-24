@@ -114,18 +114,14 @@ else
 
   imap <A-]> <Esc>>>i
   imap <A-[> <Esc><<i
- 
+
   " Bubble single lines
   nmap <C-Up> [e
   nmap <C-Down> ]e
-  nmap <C-k> [e
-  nmap <C-j> ]e
 
   " Bubble multiple lines
   vmap <C-Up> [egv
   vmap <C-Down> ]egv
-  vmap <C-k> [egv
-  vmap <C-j> ]egv
 
   " Make shift-insert work like in Xterm
   map <S-Insert> <MiddleMouse>
