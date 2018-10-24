@@ -67,4 +67,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+let g:syntastic_mode_map={ "mode": "passive" }
+
 " .vimrc.after is loaded after the plugins have loaded
