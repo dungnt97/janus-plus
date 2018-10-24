@@ -42,6 +42,9 @@ call janus#load_pathogen()
 
 call vundle#begin()
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Konfekt/FastFold'
+Plugin 'sbdchd/neoformat'
+Plugin 'benmills/vimux'
 call vundle#end()
 
 
