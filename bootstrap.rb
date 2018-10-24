@@ -20,7 +20,7 @@ class Bootstrap
     # Add .old to any existing Vim file in the home directory
     %w(.vim .vimrc .gvimrc .tmux.conf).each do |name|
       path = [home, name].join("/")
-      if File.exist?(home)
+      if File.exist?(path)
         FileUtils.mv(path, "#{path}.old") || die("Could not move #{path} to #{path}.old")
       end
     end
