@@ -41,7 +41,6 @@ exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
 call janus#load_pathogen()
 
 call vundle#begin()
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Konfekt/FastFold'
 Plugin 'sbdchd/neoformat'
 Plugin 'benmills/vimux'
@@ -58,6 +57,7 @@ autocmd BufWinLeave * call clearmatches()
 autocmd BufWritePre * :%s/\s\+$//e
 
 let g:vroom_use_vimux = 1
+let g:VimuxRunnerType = "window"
 
 noremap R "_d
 
