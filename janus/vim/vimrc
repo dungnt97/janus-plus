@@ -44,6 +44,7 @@ call vundle#begin()
 Plugin 'Konfekt/FastFold'
 Plugin 'sbdchd/neoformat'
 Plugin 'benmills/vimux'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 
