@@ -89,4 +89,5 @@ desc "Install or Update Janus."
 task :default do
   sh "rake update"
   sh "rake install"
+  sh "vim +PluginInstall +qall"
 end
