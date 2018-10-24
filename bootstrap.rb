@@ -32,6 +32,8 @@ class Bootstrap
 
   def run_rake
     Dir.chdir("#{home}/.vim") do
+      puts "Current directory: #{Dir.pwd}"
+      system("pwd")
       system("rake") || die("Rake failed.")
     end
   end
