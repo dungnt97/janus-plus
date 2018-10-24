@@ -164,3 +164,6 @@
 [submodule "janus/vim/tools/zoomwin"]
 	path = janus/vim/tools/zoomwin
 	url = https://github.com/sh-dude/ZoomWin.git
+[submodule "janus/vim/tools/vundle"]
+	path = janus/vim/tools/vundle
+	url = https://github.com/VundleVim/Vundle.vim.git
