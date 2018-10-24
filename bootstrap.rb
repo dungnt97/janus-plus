@@ -4,7 +4,7 @@ require "fileutils"
 
 class Bootstrap
   def die(message)
-    echo message
+    puts message
     exit 1
   end
 
@@ -31,7 +31,7 @@ class Bootstrap
   end
 
   def run_rake
-    Dir.chdir("/tmp") do
+    Dir.chdir("#{home}/.vim") do
       system("rake") || die("Rake failed.")
     end
   end
