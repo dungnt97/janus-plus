@@ -49,4 +49,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 autocmd BufWritePre * :%s/\s\+$//e
+
+let g:vroom_use_vimux = 1
+
 " .vimrc.after is loaded after the plugins have loaded
