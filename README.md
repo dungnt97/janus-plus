@@ -1,13 +1,16 @@
-# Janus: Vim Distribution
+# Janus-Tmux: Vim Tmux Distribution
 
 This is a distribution of plug-ins and mappings for Vim, Gvim and
-MacVim.
+MacVim and Tmux
 
 It is designed to provide minimal working environment using the most
 popular plug-ins and the most common mappings.
 
-The distribution is completely customisable using a `~/.vimrc.before`
+The VIM of this distribution is completely customisable using a `~/.vimrc.before`
 and `~/.vimrc.after` Vim RC files.
+
+The tmux of this distribution is completely customisable using a `~/.tmux.local`
+Tmux RC files
 
 ## Updating to the latest version
 
@@ -59,7 +62,7 @@ installer](https://github.com/carlhuda/janus/blob/master/bootstrap.sh)
 Janus.
 
 ```bash
-$ curl -L https://bit.ly/janus-bootstrap | bash
+$ curl -L https://raw.github.com/remitano/janus-tmux/master/bootstrap.sh | bash
 ```
 
 ## Customization
