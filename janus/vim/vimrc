@@ -77,6 +77,9 @@ endif
 
 let g:syntastic_mode_map={ "mode": "passive" }
 
+" Some NERDTree configution
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.DS_Store$', '\.git$']
 " testing comment
 
 " .vimrc.after is loaded after the plugins have loaded
