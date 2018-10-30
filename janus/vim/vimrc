@@ -56,7 +56,6 @@ autocmd BufWinLeave * call clearmatches()
 autocmd BufWritePre * :%s/\s\+$//e
 
 let g:vroom_use_vimux = 1
-let g:VimuxRunnerType = "window"
 
 noremap R "_d
 
