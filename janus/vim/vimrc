@@ -25,11 +25,6 @@ call janus#add_group("colors")
 "" Customisations
 ""
 
-if filereadable(expand("~/.vimrc.before"))
-  source ~/.vimrc.before
-endif
-
-
 " Disable plugins prior to loading pathogen
 exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
 
@@ -45,6 +40,9 @@ Plugin 'Konfekt/FastFold'
 Plugin 'sbdchd/neoformat'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
 call vundle#end()
 
 
