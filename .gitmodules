@@ -134,9 +134,6 @@
 [submodule "janus/vim/tools/ctrlp"]
 	path = janus/vim/tools/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "janus/vim/tools/vroom"]
-	path = janus/vim/tools/vroom
-	url = https://github.com/skalnik/vim-vroom.git
 [submodule "janus/vim/tools/eunuch"]
 	path = janus/vim/tools/eunuch
 	url = https://github.com/tpope/vim-eunuch.git

@@ -38,6 +38,7 @@ call janus#load_pathogen()
 call vundle#begin()
 Plugin 'Konfekt/FastFold'
 Plugin 'sbdchd/neoformat'
+Plugin 'janko-m/vim-test'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 if filereadable(expand("~/.vimrc.before"))
@@ -55,7 +56,8 @@ autocmd BufWinLeave * call clearmatches()
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-let g:vroom_use_vimux = 1
+" make test commands execute using vimux.vim
+let test#strategy = "vimux"
 
 noremap R "_d
 
