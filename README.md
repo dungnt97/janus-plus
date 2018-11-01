@@ -405,21 +405,21 @@ can "walk" up and down the list of buffers shown in the catalog by using
 next/previous buffer in succession, respectively, opening it for preview
 without leaving the buffer catalog viewer.
 
-## [Vroom](https://github.com/skalnik/vim-vroom)
-
-VRoom is a plugin inspired by [Gary Bernhardt's vim
-config](https://github.com/garybernhardt/dotfiles/blob/69330074b7a15c67efa4594a71fa91592f1ce4f9/.vimrc#L286-342)
-for running your ruby tests/specs/features.
+## [vim-test](https://github.com/janko-m/vim-test)
 
 Imagine you're hacking on a Rails controller, when you switch to the
-test or specs for the controller, you can use `<leader>r` to run all the
-specs or `<leader>R` to run the closest spec, then you can jump back to
-the controller hack on it and use `<leader>r` to run the last spec you
+test or specs for the controller, you can use `t Ctrl+f` to run all the
+specs or `t Ctrl+n` to run the closest spec, then you can jump back to
+the controller hack on it and use `t Ctrl+l` to run the last spec you
 ran last time, so you don't need to open the test again.
 
-Then benefits of this plugin are to centralize your workflow in one
-window, one software to do it all, which is a huge speedup over using
-`tmux` or multiple terminal tabs.
+All key bindings for vim-test:
+
+`t Ctrl+n` run the current test
+`t Ctrl+f` run the current whole test file
+`t Ctrl+l` run the last test
+`t Ctrl+s` run the whole test suite
+`t Ctrl+g` go to the last test file
 
 ## [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 Out of the box, all you need to know is a single key `Ctrl-n`. Pressing the key

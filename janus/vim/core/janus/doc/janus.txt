@@ -413,6 +413,14 @@ without leaving the buffer catalog viewer.
 
 ## [vim-test](https://github.com/janko-m/vim-test) *janus=features-vim-test*
 
+Imagine you're hacking on a Rails controller, when you switch to the
+test or specs for the controller, you can use `t Ctrl+f` to run all the
+specs or `t Ctrl+n` to run the closest spec, then you can jump back to
+the controller hack on it and use `t Ctrl+l` to run the last spec you
+ran last time, so you don't need to open the test again.
+
+All key bindings for vim-test:
+
 `t Ctrl+n` run the current test
 `t Ctrl+f` run the current whole test file
 `t Ctrl+l` run the last test
