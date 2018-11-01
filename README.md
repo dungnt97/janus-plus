@@ -416,9 +416,13 @@ ran last time, so you don't need to open the test again.
 All key bindings for vim-test:
 
 `t Ctrl+n` run the current test
+
 `t Ctrl+f` run the current whole test file
+
 `t Ctrl+l` run the last test
+
 `t Ctrl+s` run the whole test suite
+
 `t Ctrl+g` go to the last test file
 
 ## [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
