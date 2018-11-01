@@ -425,6 +425,11 @@ All key bindings for vim-test:
 
 `t Ctrl+g` go to the last test file
 
+## [paste](https://github.com/enricobacis/paste.vim)
+
+<leader>v to paste the clipboard
+<leader>y to copy the selected text to clipboard
+
 ## [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 Out of the box, all you need to know is a single key `Ctrl-n`. Pressing the key
 in Normal mode highlights the current word under the cursor in Visual mode and

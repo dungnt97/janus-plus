@@ -41,6 +41,7 @@ Plugin 'sbdchd/neoformat'
 Plugin 'janko-m/vim-test'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'enricobacis/paste.vim'
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
