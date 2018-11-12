@@ -86,4 +86,5 @@ task :default do
   sh "rake update"
   sh "rake install"
   sh "vim +PluginInstall +qall"
+  sh "reset"
 end
