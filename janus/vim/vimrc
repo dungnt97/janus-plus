@@ -42,6 +42,8 @@ Plugin 'janko-m/vim-test'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'enricobacis/paste.vim'
+Plugin 'vim-ruby/vim-ruby'
+
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
@@ -90,6 +92,6 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.DS_Store$', '\.git$']
 nmap <Space>N :NERDTreeFind<CR>
 
-" testing comment
-
 " .vimrc.after is loaded after the plugins have loaded
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
