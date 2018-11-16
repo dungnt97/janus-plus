@@ -61,14 +61,11 @@ task :update do
     FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
   end
 
-  puts "Pulling latest changes"
-  `git pull`
+  puts "Fetching latest changes"
+  `git remote update origin`
 
   puts "Cleaning the janus folder"
-  `git clean -xdf -- janus`
-  `git ls-files --exclude-standard --others -- janus`.split("\n").each do |untracked|
-    FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
-  end
+  `git reset --hard origin/master`
 
   puts "Synchronising submodules urls"
   `git submodule sync`
