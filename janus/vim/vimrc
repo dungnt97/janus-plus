@@ -43,6 +43,7 @@ Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'enricobacis/paste.vim'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'bogado/file-line'
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
