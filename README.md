@@ -472,6 +472,21 @@ Janus ships with a few additional syntaxes:
   global config to set this if you have EDITOR set to something else
   `$ git config --global core.editor 'vim -f'`
 
+## tmate and Mac OSX clipboard
+
+It is known that tmate (and earlier version of tmux) can run
+into issue with clipboard on Mac OSX. To get this solved:
+1. `brew install reattach-to-user-namespace`
+2. Make your own .tmux.local with this:
+```
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+```
+(The reason that the configuration is not included in the default
+configuration because it is needed on MacOSX only, and not all
+developers use zsh)
+
+Read more about clipboard issue here:
+https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 # License
 
 ### This code is free to use under the terms of the MIT license.
