@@ -427,8 +427,12 @@ All key bindings for vim-test:
 
 ## [paste](https://github.com/enricobacis/paste.vim)
 
-<leader>v to paste the clipboard
-<leader>y to copy the selected text to clipboard
+`<leader>v` to paste the clipboard
+`<leader>y` to copy the selected text to clipboard
+
+## [file-line](https://github.com/bogado/file-line)
+
+`:e file.rb:80` open file.rb and jump to line 80
 
 ## [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 Out of the box, all you need to know is a single key `Ctrl-n`. Pressing the key
