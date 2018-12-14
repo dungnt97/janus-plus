@@ -434,6 +434,24 @@ All key bindings for vim-test:
 
 `:e file.rb:80` open file.rb and jump to line 80
 
+## [abolish-vim](https://github.com/tpope/vim-abolish)_
+
+In normal mode: place cursor in front of a word
+```
+hello_there
+^--- cursor here
+```
+Then
+
+```
+crc => helloThere
+cru => HELLO_THERE
+crs => hello_there
+cr- => hello-there
+cr<space>  => hello there
+crt  => Hello There
+```
+
 ## [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 Out of the box, all you need to know is a single key `Ctrl-n`. Pressing the key
 in Normal mode highlights the current word under the cursor in Visual mode and
