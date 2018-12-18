@@ -505,6 +505,13 @@ developers use zsh)
 
 Read more about clipboard issue here:
 https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+
+## tmux prefix
+
+Ctrl+B can lead to unwanted right mouse click trigger on laptop. So in
+this customization we use backtick as the prefix. To type backtick
+simply press backtick twice
+
 # License
 
 ### This code is free to use under the terms of the MIT license.
