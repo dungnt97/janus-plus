@@ -63,6 +63,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " make test commands execute using vimux.vim
 let test#strategy = "vimux"
+nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
 nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
 nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
@@ -75,7 +76,20 @@ noremap R "_d
 " No need to hold shift comma anymore
 nnoremap ; :
 
-let mapleader = " "
+let mapleader = "\<SPACE>"
+" No need for ex mode
+  nnoremap Q <nop>
+" recording macros is not my thing
+  map q <Nop>
+
+" Align blocks of text and keep them selected
+  vmap < <gv
+  vmap > >gv
+  nnoremap <leader>d "_d
+  vnoremap <leader>d "_d
+
+set timeoutlen=500
+set ttimeoutlen=100
 
 if executable('ag')
   " Use ag over grep
