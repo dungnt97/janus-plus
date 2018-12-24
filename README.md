@@ -501,6 +501,12 @@ developers use zsh)
 Read more about clipboard issue here:
 https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 
+## VIM clipboard on OSX
+If you use `:version` in your VIM and see `-xterm_clipboard`, your VIM
+should work correctly with clipboard (OSX). If not, you will need to use
+brew to install your VIM so that it will have `-xterm_clipboard` in its
+`:version` to work correctly with clipboard.
+
 ## tmux prefix
 
 Ctrl+B can lead to unwanted right mouse click trigger on laptop. So in
