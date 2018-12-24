@@ -425,11 +425,6 @@ All key bindings for vim-test:
 
 `t Ctrl+g` go to the last test file
 
-## [paste](https://github.com/enricobacis/paste.vim)
-
-`<leader>v` to paste the clipboard
-`<leader>y` to copy the selected text to clipboard
-
 ## [file-line](https://github.com/bogado/file-line)
 
 `:e file.rb:80` open file.rb and jump to line 80
