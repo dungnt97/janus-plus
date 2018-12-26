@@ -116,6 +116,9 @@ let NERDTreeQuitOnOpen=1
 nmap <leader>N :NERDTreeFind<CR>
 map <silent> - :NERDTreeToggle<CR>
 
+" NerdCommenter
+let g:NERDSpaceDelims = 1
+
 " .vimrc.after is loaded after the plugins have loaded
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
