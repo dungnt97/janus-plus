@@ -44,6 +44,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'bogado/file-line'
 Plugin 'tpope/vim-abolish'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
@@ -118,3 +119,8 @@ map <silent> - :NERDTreeToggle<CR>
 " .vimrc.after is loaded after the plugins have loaded
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
+
+" Refresh changed content of a file
+set autoread
+autocmd BufEnter,FocusGained * checktime
+
