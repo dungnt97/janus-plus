@@ -127,3 +127,11 @@ let g:rubycomplete_rails = 1
 set autoread
 autocmd BufEnter,FocusGained * checktime
 
+" Clear highlighting on escape in normal mode
+" The second line is needed for mapping to the escape key since Vim internally uses escape to represent special keys.
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
+" copy current files path to clipboard
+nmap cp :let @+= expand("%") <cr>
+
