@@ -27,7 +27,7 @@ class Bootstrap
   end
 
   def clone_janus
-    system("git clone --recursive https://github.com/remitano/janus-tmux.git #{home}/.vim") || die("Could not clone the repository to #{home}/.vim")
+    system("git clone --recursive https://github.com/remitano/janus-plus.git #{home}/.vim") || die("Could not clone the repository to #{home}/.vim")
   end
 
   def run_rake
