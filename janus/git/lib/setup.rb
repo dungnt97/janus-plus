@@ -3,34 +3,36 @@ require "fileutils"
 module Git
   class Setup
     def perform
-      if current_gitconfig_symlinked?
-        FileUtils.rm_rf current_gitconfig_path
-      elsif current_gitconfig_existed?
-        FileUtils.mv(current_gitconfig_path, local_gitconfig_path)
+      replace_symlink(
+        File.expand_path("~/.gitconfig"),
+        File.expand_path("../../gitconfig", __FILE__),
+        File.expand_path("~/.gitconfig.local")
+      )
+
+      replace_symlink(
+        File.expand_path("~/.git-tools"),
+        File.expand_path("../..", __FILE__)
+      )
+    end
+
+    def replace_symlink(location, new_target, move_current_nonsymlink_to = nil)
+      if File.symlink?(location)
+        FileUtils.rm_rf location
+      elsif File.exist?(location)
+        if move_current_nonsymlink_to
+          FileUtils.mv(location, move_current_nonsymlink_to)
+        else
+          print "Overwrite #{location}? [yN]"
+          if (STDIN.gets.chomp == "y")
+            puts "Overwriting"
+            FileUtils.rm_rf location
+          else
+            puts "Skipping"
+          end
+        end
       end
 
-      FileUtils.ln_s(shared_gitconfig_path, current_gitconfig_path)
-    end
-
-    def current_gitconfig_symlinked?
-      File.symlink?(current_gitconfig_path)
-    end
-
-    def current_gitconfig_existed?
-      File.exist?(current_gitconfig_path)
-    end
-
-    def current_gitconfig_path
-      File.expand_path "~/.gitconfig"
-    end
-
-    def local_gitconfig_path
-      File.expand_path "~/.gitconfig.local"
-    end
-
-
-    def shared_gitconfig_path
-      File.expand_path("../../gitconfig", __FILE__)
+      FileUtils.ln_s(new_target, location)
     end
   end
 end

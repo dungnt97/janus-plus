@@ -15,3 +15,6 @@
   ca = commit --amend
   ru = remote update
   ruo = remote update origin
+
+[core]
+  hooksPath = ./.git-tools/bin/
