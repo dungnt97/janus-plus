@@ -15,7 +15,7 @@ Tmux RC files
 The git of this distribution is completely customisable using a `~/.gitconfig.local`
 Git RC files
 
-This distribution require git 2.19.1 for the hooks to work correctly.
+This distribution require git >= 2.19.1 for the hooks to work correctly.
 You can do that by using `brew install git` and add this to your .bashrc
 ```bash
 export PATH=/usr/local/bin:$PATH
