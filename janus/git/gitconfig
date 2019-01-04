@@ -1,3 +1,17 @@
 [include]
   path = ./.gitconfig.local
 
+[alias]
+  br = rev-parse --abbrev-ref HEAD
+  ci = commit
+  co = checkout
+  st = status --short
+  lg = log --oneline --decorate -n 20
+  wd = diff --word-diff
+  dc = diff --cached
+  wdc = diff --cached --word-diff
+  pom = push origin master
+  po = push origin
+  ca = commit --amend
+  ru = remote update
+  ruo = remote update origin
