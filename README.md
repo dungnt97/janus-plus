@@ -1,7 +1,7 @@
-# Janus-Tmux: Vim Tmux Distribution
+# Janus-Plus: Vim Tmux Git Distribution
 
 This is a distribution of plug-ins and mappings for Vim, Gvim and
-MacVim and Tmux
+MacVim and Tmux and Git, originated from the awesome Janus
 
 It is designed to provide minimal working environment using the most
 popular plug-ins and the most common mappings.
@@ -12,6 +12,14 @@ and `~/.vimrc.after` Vim RC files.
 The tmux of this distribution is completely customisable using a `~/.tmux.local`
 Tmux RC files
 
+The git of this distribution is completely customisable using a `~/.gitconfig.local`
+Git RC files
+
+This distribution require git 2.19.1 for the hooks to work correctly.
+You can do that by using `brew install git` and add this to your .bashrc
+```bash
+export PATH=/usr/local/bin:$PATH
+```
 ## Updating to the latest version
 
 To update to the latest version of the distribution, just run `rake`
@@ -512,6 +520,17 @@ brew to install your VIM so that it will have `-xterm_clipboard` in its
 Ctrl+B can lead to unwanted right mouse click trigger on laptop. So in
 this customization we use backtick as the prefix. To type backtick
 simply press backtick twice
+
+## git hooks
+
+1. console.debug / console.warn / console.log
+
+The hook will warn you during commit time that there is console.X in
+your diff
+
+2. byebug / debugger
+The hook will warn you during commit time that there is byebug/debugger
+in your diff
 
 # License
 
