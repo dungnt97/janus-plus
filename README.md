@@ -437,7 +437,7 @@ All key bindings for vim-test:
 
 `:e file.rb:80` open file.rb and jump to line 80
 
-## [abolish-vim](https://github.com/tpope/vim-abolish)_
+## [abolish-vim](https://github.com/tpope/vim-abolish)
 
 In normal mode: place cursor in front of a word
 ```
