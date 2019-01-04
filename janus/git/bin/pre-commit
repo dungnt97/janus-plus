@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
-puts "Hello"
+require_relative "../lib/hooks"
+Git::Hooks.new.process

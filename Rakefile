@@ -27,7 +27,7 @@ task :link_vim_conf_files do
 end
 
 task :link_git_conf_files do
-  require_relative "janus/git/git"
+  require_relative "janus/git/lib/setup"
   Git::Setup.new.perform
 end
 
