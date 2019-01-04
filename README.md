@@ -523,15 +523,16 @@ simply press backtick twice
 
 ## git hooks
 
-1. console.debug / console.warn / console.log
+This distribution come with default global github that will warn you
+about these patterns in your code:
 
-The hook will warn you during commit time that there is console.X in
-your diff
-
-2. byebug / debugger
-The hook will warn you during commit time that there is byebug/debugger
-in your diff
-
+```
+console.debug
+console.warn
+console.log
+byebug
+debugger
+```
 # License
 
 ### This code is free to use under the terms of the MIT license.
