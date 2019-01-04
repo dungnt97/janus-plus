@@ -1,5 +1,5 @@
 [include]
-  path = ./.gitconfig.local
+  path = ~/.gitconfig.local
 
 [alias]
   br = rev-parse --abbrev-ref HEAD
@@ -17,4 +17,4 @@
   ruo = remote update origin
 
 [core]
-  hooksPath = ./.git-tools/bin/
+  hooksPath = ~/.git-tools/bin
