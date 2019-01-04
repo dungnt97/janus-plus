@@ -1,9 +1,11 @@
 module Git
   class ConsoleLog
-    def filter(text)
+    def filter(lines)
       %w(log debug info warn).each do |pattern|
-        if text.include?("console.#{pattern}")
-          return [false, "console.#{pattern} found in diff"]
+        lines.each do |line|
+          if line.include?("console.#{pattern}")
+            return [false, "[console.#{pattern}] found in [#{line}]"]
+          end
         end
       end
 

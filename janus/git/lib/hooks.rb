@@ -2,7 +2,7 @@ Dir[File.expand_path("../hooks/**/*.rb", __FILE__)].each { |f| require f }
 module Git
   class Hooks
     def hook_classes
-      [ConsoleLog]
+      [ConsoleLog, Debugger]
     end
 
     def hooks
@@ -28,7 +28,7 @@ module Git
     end
 
     def process
-      process_diff(additional_diff)
+      process_diff(additional_diff_lines)
     end
 
     def diff
@@ -39,8 +39,8 @@ module Git
       @diff_lines ||= diff.split("\n")
     end
 
-    def additional_diff
-      @additional_diff ||= diff_lines.select { |line| line.start_with?("+") }.join("\n")
+    def additional_diff_lines
+      @additional_diff_lines ||= diff_lines.select { |line| line.start_with?("+") }
     end
   end
 end
