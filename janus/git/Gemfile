@@ -1,0 +1,9 @@
+source "http://rubygems.org"
+
+# App Stack
+
+group :test do
+  gem "byebug"
+  gem "rspec"
+  gem "rspec_junit_formatter"
+end
