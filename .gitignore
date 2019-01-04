@@ -12,3 +12,4 @@ mustache.vim
 
 # pathogen / vundle packages
 bundle
+.byebug_history
