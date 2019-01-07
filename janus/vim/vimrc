@@ -73,9 +73,6 @@ nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
 " Delete a line without override the default register
 noremap R "_d
 
-" No need to hold shift comma anymore
-nnoremap ; :
-
 let mapleader = "\<SPACE>"
 " No need for ex mode
   nnoremap Q <nop>
