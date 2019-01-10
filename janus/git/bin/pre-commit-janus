@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/hooks"
+Git::Hooks.new.process
+
