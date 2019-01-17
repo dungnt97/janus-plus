@@ -1,22 +1,9 @@
-#!/bin/sh
-BASEDIR=$(dirname $0)
-HOOKS="pre-commit-janus"
-for hook in $HOOKS; do
-    if [ -f "$BASEDIR/$hook" ]; then
-        "$BASEDIR/$hook"
-        if [ $? != 0 ]; then
-            exit 1
-        fi
-    else
-        echo "Error: file $hook not found."
-        exit 1
-    fi
-done
+#!/usr/bin/env ruby
 
-CURRENT_DIR=$(pwd)
-if [ -f "$CURRENT_DIR/.git/hooks/pre-commit" ]; then
-  "$CURRENT_DIR/.git/hooks/pre-commit"
-  if [ $? != 0 ]; then
-    exit 1
-  fi
-fi
+require_relative "../lib/hooks"
+Git::Hooks.new.process
+
+pre_commit_local = "#{Dir.pwd}/.git/hooks/pre-commit"
+if File.file?(pre_commit_local)
+  exec(pre_commit_local)
+end
