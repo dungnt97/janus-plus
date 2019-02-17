@@ -132,3 +132,5 @@ nnoremap <esc>^[ <esc>^[
 " copy current files path to clipboard
 nmap cp :let @+= expand("%") <cr>
 
+" re-index tags file
+map <Leader>ct :!ctags --extra=+f -R *<CR><CR>
