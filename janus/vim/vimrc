@@ -115,6 +115,7 @@ map <silent> - :NERDTreeToggle<CR>
 
 " NerdCommenter
 let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = "left"
 
 " .vimrc.after is loaded after the plugins have loaded
 let g:rubycomplete_buffer_loading = 1
