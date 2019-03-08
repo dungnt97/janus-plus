@@ -92,7 +92,13 @@ let mapleader = "\<SPACE>"
 set timeoutlen=500
 set ttimeoutlen=100
 
-if executable('ag')
+" Use ripgrep for Ack
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+  let g:ackprg = 'rg --vimgrep --no-heading'
+elseif executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
