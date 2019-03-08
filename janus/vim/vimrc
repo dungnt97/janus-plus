@@ -113,8 +113,14 @@ let NERDTreeIgnore = ['\.DS_Store$', '\.git$']
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeQuitOnOpen=1
 
-nmap <leader>N :NERDTreeFind<CR>
+nmap <silent> <Leader>n :NERDTreeFind<CR>
 map <silent> - :NERDTreeToggle<CR>
+
+" Fix nerdtree syntax highlight too slow
+augroup nerdtreedisablecursorline
+  autocmd!
+  autocmd FileType nerdtree setlocal nocursorline
+augroup end
 
 " NerdCommenter
 let g:NERDSpaceDelims = 1
