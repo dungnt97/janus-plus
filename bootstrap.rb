@@ -18,7 +18,7 @@ class Bootstrap
 
   def backup_previous_install
     # Add .old to any existing Vim file in the home directory
-    %w(.vim .vimrc .gvimrc .tmux.conf).each do |name|
+    %w(.vim .vimrc .gvimrc .tmux.conf .config/nvim).each do |name|
       path = [home, name].join("/")
       if File.exist?(path)
         FileUtils.mv(path, "#{path}.old") || die("Could not move #{path} to #{path}.old")
@@ -38,10 +38,16 @@ class Bootstrap
     end
   end
 
+  def link_nvim
+    system("ln -s #{home}/.vim #{home}/.config/nvim")
+    system("ln -s #{home}/.vimrc #{home}/.config/nvim/init.vim")
+  end
+
   def main()
     if !File.exist?("#{home}/.vim/janus") || forced? then
       backup_previous_install
       clone_janus
+      link_nvim
     end
     run_rake
   end
