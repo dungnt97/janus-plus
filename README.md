@@ -247,11 +247,8 @@ You can learn more about it with :help Ack.
 **Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
 `:Ack `.
 
-## [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
-
-Fuzzy file, buffer, mru and tag finder. Replaces [Command-T](https://github.com/wincent/Command-T)
-
-**Customizations**: For users of Command-T Janus maps CtrlP to command-t (`<D-t>`)
+## [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF)
+This plugin is mainly used for locating files, buffers, mrus, tags in large project.
 
 ## [NERDCommenter](http://github.com/ddollar/nerdcommenter)
 

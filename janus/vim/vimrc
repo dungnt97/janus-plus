@@ -45,6 +45,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'bogado/file-line'
 Plugin 'tpope/vim-abolish'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'Yggdroot/LeaderF'
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
@@ -144,3 +145,8 @@ nmap cp :let @+= expand("%") <cr>
 
 " re-index tags file
 map <Leader>ct :!ctags --extra=+f -R *<CR><CR>
+
+" Yggdroot/LeaderF
+let g:Lf_ReverseOrder = 1
+nmap <C-p> :LeaderfFile<CR>
+nmap <C-l> :LeaderfMru<CR>
