@@ -40,7 +40,6 @@ class Bootstrap
 
   def link_nvim
     system("ln -s #{home}/.vim #{home}/.config/nvim")
-    system("ln -s #{home}/.vimrc #{home}/.config/nvim/init.vim")
   end
 
   def main()
