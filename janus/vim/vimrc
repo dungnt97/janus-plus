@@ -87,7 +87,7 @@ let mapleader = "\<SPACE>"
   nnoremap <leader>d "_d
   vnoremap <leader>d "_d
 
-set timeoutlen=500
+set timeoutlen=300
 set ttimeoutlen=100
 
 " Use ripgrep for Ack
