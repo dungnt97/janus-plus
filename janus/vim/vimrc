@@ -80,8 +80,6 @@ nnoremap ; :
 let mapleader = "\<SPACE>"
 " No need for ex mode
   nnoremap Q <nop>
-" recording macros is not my thing
-  map q <Nop>
 
 " Align blocks of text and keep them selected
   vmap < <gv
