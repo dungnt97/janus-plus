@@ -156,3 +156,7 @@ nmap <C-p> :LeaderfFile<CR>
 nmap <silent> <Leader>p :LeaderfMru<CR>
 " search word under cursor, the pattern is treated as regex, and enter normal mode directly
 nmap <silent> <Leader>h :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
+
+" System Settings  ----------------------------------------------------------{{{
+  set noswapfile
+" {{{
