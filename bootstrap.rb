@@ -42,12 +42,17 @@ class Bootstrap
     system("ln -s #{home}/.vim #{home}/.config/nvim")
   end
 
+  def install_utils
+    system("brew install reattach-to-user-namespace")
+  end
+
   def main()
     if !File.exist?("#{home}/.vim/janus") || forced? then
       backup_previous_install
       clone_janus
       link_nvim
     end
+    install_utils
     run_rake
   end
 end
