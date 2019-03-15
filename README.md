@@ -492,16 +492,10 @@ Janus ships with a few additional syntaxes:
 
 ## tmate and Mac OSX clipboard
 
-It is known that tmate (and earlier version of tmux) can run
-into issue with clipboard on Mac OSX. To get this solved:
-1. `brew install reattach-to-user-namespace`
-2. Make your own .tmux.local with this:
+If you're using bash instead of zsh, add this to your .tmux.local
 ```
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+set-option -g default-command "reattach-to-user-namespace -l bash"
 ```
-(The reason that the configuration is not included in the default
-configuration because it is needed on MacOSX only, and not all
-developers use zsh)
 
 Read more about clipboard issue here:
 https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
