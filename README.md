@@ -490,16 +490,6 @@ Janus ships with a few additional syntaxes:
   global config to set this if you have EDITOR set to something else
   `$ git config --global core.editor 'vim -f'`
 
-## tmate and Mac OSX clipboard
-
-If you're using bash instead of zsh, add this to your .tmux.local
-```
-set-option -g default-command "reattach-to-user-namespace -l bash"
-```
-
-Read more about clipboard issue here:
-https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
-
 ## VIM clipboard on OSX
 If you use `:version` in your VIM and see `-xterm_clipboard`, your VIM
 should work correctly with clipboard (OSX). If not, you will need to use
