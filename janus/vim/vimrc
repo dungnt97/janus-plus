@@ -160,4 +160,3 @@ nmap <silent> <Leader>h :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>
 " System Settings  ----------------------------------------------------------{{{
   set noswapfile
 " {{{
-nmap <silent> <Leader>n :NERDTreeFind<CR>
