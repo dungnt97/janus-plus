@@ -118,7 +118,7 @@ let NERDTreeIgnore = ['\.DS_Store$', '\.git$']
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeQuitOnOpen=1
 
-nmap <silent> <Leader>n :NERDTreeFind<CR>
+nmap <silent> <leader>N :NERDTreeFind<CR>
 map <silent> - :NERDTreeToggle<CR>
 
 " Fix nerdtree syntax highlight too slow
