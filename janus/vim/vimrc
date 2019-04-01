@@ -46,6 +46,8 @@ Plugin 'bogado/file-line'
 Plugin 'tpope/vim-abolish'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'Yggdroot/LeaderF'
+Plugin 'drmingdrmer/vim-toggle-quickfix'
+"
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
@@ -160,3 +162,7 @@ nmap <silent> <Leader>h :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>
 " System Settings  ----------------------------------------------------------{{{
   set noswapfile
 " {{{
+
+" drmingdrmer/vim-toggle-quickfix
+  nmap <C-g><C-o> <Plug>window:quickfix:toggle
+
