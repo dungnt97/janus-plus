@@ -50,19 +50,17 @@ Plugin 'drmingdrmer/vim-toggle-quickfix'
 "
 
 " Moved from Janus submodules
-" Core
-Plugin 'tpope/vim-pathogen'
-Plugin 'scrooloose/nerdtree'
 
 " Language
 Plugin 'tpope/vim-rails'
 Plugin 'chrisbra/csv.vim'
-Plugin 'mmalecki/vim-node'
+Plugin 'mmalecki/vim-node.js'
 Plugin 'sunaku/vim-ruby-minitest'
 Plugin 'depuracao/vim-rdoc'
 Plugin 'sheerun/vim-polyglot'
 
 " Tools
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
