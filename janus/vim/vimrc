@@ -47,6 +47,53 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'Yggdroot/LeaderF'
 
+" Moved from Janus submodules
+" Core
+Plugin 'tpope/vim-pathogen'
+Plugin 'scrooloose/nerdtree'
+
+" Language
+Plugin 'tpope/vim-rails'
+Plugin 'chrisbra/csv.vim'
+Plugin 'mmalecki/vim-node'
+Plugin 'sunaku/vim-ruby-minitest'
+Plugin 'depuracao/vim-rdoc'
+Plugin 'sheerun/vim-polyglot'
+
+" Tools
+Plugin 'tpope/vim-unimpaired'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ervandew/supertab'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'garbas/vim-snipmate'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'tpope/vim-endwise'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'vim-scripts/vimwiki'
+Plugin 'ap/vim-css-color'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'rgarver/Kwbd.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-repeat'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-dispatch'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'thinca/vim-visualstar'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'sh-dude/ZoomWin'
+
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
