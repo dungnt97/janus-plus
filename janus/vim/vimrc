@@ -91,7 +91,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'thinca/vim-visualstar'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'sh-dude/ZoomWin'
+Plugin 'troydm/zoomwintab.vim'
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
