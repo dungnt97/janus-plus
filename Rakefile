@@ -59,19 +59,31 @@ task :folders do
   end
 end
 
-task :update do
+task :clean do
   puts "Cleaning the janus folder"
   `git clean -xdf -- janus`
   `git ls-files --exclude-standard --others -- janus`.split("\n").each do |untracked|
     FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
   end
+end
 
+task :fetch_origin do
   puts "Fetching latest changes"
-  `git remote update origin`
+  sh "git remote update origin"
 
   puts "Cleaning the janus folder"
-  `git reset --hard origin/master`
+  sh "git reset --hard origin/master"
+end
 
+task :fetch_local do
+  puts "Fetching latest changes"
+  sh "git remote update local"
+
+  puts "Cleaning the janus folder"
+  sh "git reset --hard local/master"
+end
+
+task :fetch_submodules do
   puts "Synchronising submodules urls"
   `git submodule sync`
 
@@ -79,14 +91,30 @@ task :update do
   `git submodule update --init`
 end
 
-task :install => [:folders, :link_vim_conf_files, :link_git_conf_files] do
+task :vundle do
+  sh "vim +PluginInstall +qall"
+  sh "reset"
+end
+
+task :install => [:folders, :link_vim_conf_files, :link_git_conf_files, :vundle] do
   # Dummy task, real work is done with the hooks.
 end
 
 desc "Install or Update Janus."
 task :default do
-  sh "rake update"
-  sh "rake install"
-  sh "vim +PluginInstall +qall"
-  sh "reset"
+  Rake::Task["clean"].invoke
+  Rake::Task["fetch_origin"].invoke
+  Rake::Task["fetch_submodules"].invoke
+  Rake::Task["install"].invoke
+end
+
+desc "Install or Update Janus using the local repo"
+task :local, [:path] do |task, local|
+  sh "git remote rm local"
+  sh "git remote add local #{local}"
+  sh "git remote add local #{local}"
+  Rake::Task["clean"].invoke
+  Rake::Task["fetch_local"].invoke
+  Rake::Task["fetch_submodules"].invoke
+  Rake::Task["install"].invoke
 end
