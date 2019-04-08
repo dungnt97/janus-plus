@@ -29,6 +29,19 @@ NOTE: If you ever have an error updating Janus relating to a
 missing commit in a submodule, please try running `rake` again before
 submitting an issue.
 
+## Testing changes without pushing to github
+You can test your new changes to janus-plus without pushing to github,
+assume that your changes is on master branch of your
+`/path/to/your/local/janus-plus`
+
+```bash
+cd ~/.vim
+rake
+# you need run "rake" one time to make sure you get the local
+# changes update ability which added recently
+rake local[/path/to/your/local/janus-plus]
+```
+
 ## Mailing list
 
 The mailing list is hosted at [Google
