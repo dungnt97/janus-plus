@@ -109,9 +109,9 @@ task :default do
 end
 
 desc "Install or Update Janus using the local repo"
-task :local, [:path] do |task, local|
+task :local, [:path] do |task, args|
   system "git remote rm local"
-  sh "git remote add local #{local}"
+  sh "git remote add local #{args[:path]}"
   Rake::Task["clean"].invoke
   Rake::Task["fetch_local"].invoke
   Rake::Task["fetch_submodules"].invoke
