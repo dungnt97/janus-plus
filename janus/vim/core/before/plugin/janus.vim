@@ -248,7 +248,8 @@ endfunction
 " @param [String] The plugin name
 " @return [Boolean]
 function! janus#is_module_loaded(name)
-  return len(janus#vim_files(janus#plugin_path(a:name))) > 0
+  return 1
+  " return len(janus#vim_files(janus#plugin_path(a:name))) > 0
 endfunction
 
 " Is plugin disabled?
@@ -267,7 +268,8 @@ endfunction
 " @param [String] The plugin name
 " @return [Boolean]
 function! janus#is_plugin_enabled(name)
-  return janus#is_module_loaded(a:name) && !janus#is_plugin_disabled(a:name)
+  return 1
+  " return janus#is_module_loaded(a:name) && !janus#is_plugin_disabled(a:name)
 endfunction
 
 " Mapping function
