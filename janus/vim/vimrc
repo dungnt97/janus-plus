@@ -210,3 +210,10 @@ nmap <silent> <Leader>h :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>
 " drmingdrmer/vim-toggle-quickfix
   nmap <C-g><C-o> <Plug>window:quickfix:toggle
 
+" Ctrl + S to save
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
+
+" Ctrl + A to select all
+map <C-a> <esc>ggVG<CR>
