@@ -114,9 +114,9 @@ def blank?(value)
 end
 
 desc "Install or Update Janus using the local repo"
-task :local, [:path, :branch] do |task, args|
-  if blank?(args[:path])
-    puts "Path is not provided"
+task :local, [:repo, :branch] do |task, args|
+  if blank?(args[:repo])
+    puts "Repo is not provided"
     exit 1
   end
 
@@ -126,7 +126,7 @@ task :local, [:path, :branch] do |task, args|
   end
 
   system "git remote rm local"
-  sh "git remote add local #{args[:path]}"
+  sh "git remote add local #{args[:repo]}"
   Rake::Task["clean"].invoke
   Rake::Task["fetch_local"].invoke(args[:branch])
   Rake::Task["fetch_submodules"].invoke
