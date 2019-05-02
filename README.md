@@ -39,7 +39,7 @@ cd ~/.vim
 rake
 # you need run "rake" one time to make sure you get the local
 # changes update ability which added recently
-rake local[/path/to/your/local/janus-plus]
+rake local[/path/to/your/local/janus-plus,your_branch]
 ```
 
 ## Mailing list
