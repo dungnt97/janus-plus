@@ -75,12 +75,12 @@ task :fetch_origin do
   sh "git reset --hard origin/master"
 end
 
-task :fetch_local do
+task :fetch_local, [:branch] do |task, args|
   puts "Fetching latest changes"
   sh "git remote update local"
 
   puts "Cleaning the janus folder"
-  sh "git reset --hard local/master"
+  sh "git reset --hard local/#{args[:branch]}"
 end
 
 task :fetch_submodules do
@@ -109,11 +109,11 @@ task :default do
 end
 
 desc "Install or Update Janus using the local repo"
-task :local, [:path] do |task, args|
+task :local, [:path, :branch] do |task, args|
   system "git remote rm local"
   sh "git remote add local #{args[:path]}"
   Rake::Task["clean"].invoke
-  Rake::Task["fetch_local"].invoke
+  Rake::Task["fetch_local"].invoke(args[:branch])
   Rake::Task["fetch_submodules"].invoke
   sh "rake install"
 end
