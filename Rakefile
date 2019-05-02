@@ -108,8 +108,23 @@ task :default do
   sh "rake install"
 end
 
+def blank?(value)
+  return true if value.nil?
+  value == ""
+end
+
 desc "Install or Update Janus using the local repo"
 task :local, [:path, :branch] do |task, args|
+  if blank?(args[:path])
+    puts "Path is not provided"
+    exit 1
+  end
+
+  if blank?(args[:branch])
+    puts "Branch is not provided"
+    exit 2
+  end
+
   system "git remote rm local"
   sh "git remote add local #{args[:path]}"
   Rake::Task["clean"].invoke
