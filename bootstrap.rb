@@ -43,7 +43,12 @@ class Bootstrap
   end
 
   def install_utils
-    system("brew install reattach-to-user-namespace")
+    host_os = RbConfig::CONFIG['host_os']
+    if host_os.include?("darwin")
+      system("brew install reattach-to-user-namespace")
+    elsif host_os.include?("linux")
+      system("sudo apt install xclip")
+    end
   end
 
   def main()
