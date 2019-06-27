@@ -217,3 +217,7 @@ imap <C-s> <Esc>:w<CR>i
 
 " Ctrl + A to select all
 map <C-a> <esc>ggVG<CR>
+
+" Power charge f with easymotion
+nmap f <Plug>(easymotion-prefix)f
+nmap F <Plug>(easymotion-prefix)F
