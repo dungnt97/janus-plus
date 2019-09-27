@@ -534,6 +534,7 @@ Tig is an awesome tools so you can stage your changes in a terminal
 This distribution create a shared .tigrc that allow you to:
   1. press `a` in status view to amend the current commit
   2. press `p` in status view to push the current branch to origin
+  3. press `D` in status view to delete selected file
 # License
 
 ### This code is free to use under the terms of the MIT license.
