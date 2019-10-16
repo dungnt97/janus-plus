@@ -15,9 +15,27 @@
   ca = commit --amend
   ru = remote update
   ruo = remote update origin
+  mt = mergetool -t merge3
+  m4 = mergetool -t merge4
 
 [core]
   hooksPath = ~/.git-tools/bin
 
 [push]
 	default = current
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+[mergetool]
+    prompt = false
+
+[diff]
+    tool = vimdiff
+
+[mergetool "merge3"]
+  cmd = vim -f -d -c  \"wincmd w | wincmd J\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+
+[mergetool "merge4"]
+  cmd = vim -f -d -c  \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
