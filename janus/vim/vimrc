@@ -217,3 +217,8 @@ imap <C-s> <Esc>:w<CR>i
 
 " Ctrl + A to select all
 map <C-a> <esc>ggVG<CR>
+
+if &diff
+  nmap <silent> <C-c> :cquit<Cr>
+  colorscheme diffonly
+end
