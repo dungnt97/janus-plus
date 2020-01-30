@@ -35,6 +35,7 @@ exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
 " Load all groups, custom dir, and janus core
 call janus#load_pathogen()
 
+" Remitano Plugins --- {{{
 " Auto installation for vim-plug plugin manager
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -105,6 +106,7 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 call plug#end()
+"  }}}
 
 highlight ExtraWhitespace ctermbg=yellow guibg=yellow
 match ExtraWhitespace /\s\+$/
