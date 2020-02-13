@@ -91,12 +91,12 @@ task :fetch_submodules do
   `git submodule update --init`
 end
 
-task :vundle do
-  sh "vim +PluginInstall +qall"
+task :vim_plug do
+  sh "vim +PlugInstall +qall"
   sh "reset"
 end
 
-task :install => [:folders, :link_vim_conf_files, :link_git_conf_files, :vundle] do
+task :install => [:folders, :link_vim_conf_files, :link_git_conf_files, :vim_plug] do
   # Dummy task, real work is done with the hooks.
 end
 
