@@ -187,6 +187,22 @@ Here're some tips in case you've never used VIM before:
 * To enter visual mode, hit `v`
 * To exit visual mode, hit `<ESC>`
 
+## Installing Plugins
+
+`remitano/janus-plus` uses [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins.
+
+Before you can use vim, you need to run `:PlugInstall`. Please reference the vim-plug repo for more info.
+
+| Command                             | Description                                                        |
+| ----------------------------------- | ------------------------------------------------------------------ |
+| `PlugInstall [name ...] [#threads]` | Install plugins                                                    |
+| `PlugUpdate [name ...] [#threads]`  | Install or update plugins                                          |
+| `PlugClean[!]`                      | Remove unlisted plugins (bang version will clean without prompt) |
+| `PlugUpgrade`                       | Upgrade vim-plug itself                                            |
+| `PlugStatus`                        | Check the status of plugins                                        |
+| `PlugDiff`                          | Examine changes from the previous update and the pending changes   |
+| `PlugSnapshot[!] [output path]`     | Generate script for restoring the current snapshot of the plugins  |
+
 ## Useful commands
 
 * Use `:q` to exit vim
