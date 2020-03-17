@@ -55,6 +55,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'Yggdroot/LeaderF'
 Plug 'drmingdrmer/vim-toggle-quickfix'
+Plug 'dense-analysis/ale'
 "
 
 " Moved from Janus submodules
