@@ -231,3 +231,12 @@ if &diff
   nmap <silent> <C-c> :cquit<Cr>
   colorscheme diffonly
 end
+
+" Only run linters that are specified here
+let g:ale_linters_explicit = 1
+let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
+
+" These options bellow to make sure we only run lint when saving file
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
