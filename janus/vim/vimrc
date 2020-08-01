@@ -53,7 +53,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'bogado/file-line'
 Plug 'tpope/vim-abolish'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'Yggdroot/LeaderF'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'dense-analysis/ale'
 Plug 'nnnoel/ruby-matchit'
