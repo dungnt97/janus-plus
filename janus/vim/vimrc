@@ -67,7 +67,6 @@ Plug 'chrisbra/csv.vim'
 Plug 'mmalecki/vim-node.js'
 Plug 'sunaku/vim-ruby-minitest'
 Plug 'depuracao/vim-rdoc'
-Plug 'sheerun/vim-polyglot'
 
 " Tools
 Plug 'scrooloose/nerdtree'
@@ -104,6 +103,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'troydm/zoomwintab.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'sheerun/vim-polyglot'
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
