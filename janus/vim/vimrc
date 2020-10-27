@@ -39,7 +39,7 @@ call janus#load_pathogen()
 " Auto installation for vim-plug plugin manager
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -53,10 +53,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'bogado/file-line'
 Plug 'tpope/vim-abolish'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'dense-analysis/ale'
-Plug 'nnnoel/ruby-matchit'
 "
 
 " Moved from Janus submodules
@@ -74,7 +72,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
-Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-surround'
@@ -89,7 +86,6 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'vim-scripts/vimwiki'
 Plug 'ap/vim-css-color'
-Plug 'Lokaltog/vim-easymotion'
 Plug 'chrisbra/NrrwRgn'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'rgarver/Kwbd.vim'
@@ -103,6 +99,36 @@ Plug 'thinca/vim-visualstar'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'troydm/zoomwintab.vim'
+
+" Custom
+Plug 'itchyny/lightline.vim'
+Plug 'alvan/vim-closetag'
+Plug 'easymotion/vim-easymotion'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vwxyutarooo/nerdtree-devicons-syntax'
+Plug 'mattn/emmet-vim'
+Plug 'AndrewRadev/tagalong.vim'
+Plug 'mattn/vim-ale-icons'
+
+" Theme
+Plug 'patstockwell/vim-monokai-tasty'
+
+" For golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" For javascript
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components'
+Plug 'elzr/vim-json'
+Plug 'jparise/vim-graphql'
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
@@ -134,38 +160,36 @@ noremap R "_d
 " No need to hold shift comma anymore
 nnoremap ; :
 
-let mapleader = "\<SPACE>"
+" Leader
+let mapleader = ","
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+
+" Numbers
+set relativenumber
+set number
+set numberwidth=5
+
+" Theme and colors
+set lazyredraw
+set termguicolors
+set background=dark
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
+
+filetype plugin indent on
 " No need for ex mode
-  nnoremap Q <nop>
+nnoremap Q <nop>
 
 " Align blocks of text and keep them selected
-  vmap < <gv
-  vmap > >gv
-  nnoremap <leader>d "_d
-  vnoremap <leader>d "_d
+vmap < <gv
+vmap > >gv
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 set timeoutlen=500
 set ttimeoutlen=100
-
-" Use ripgrep for Ack
-if executable("rg")
-  set grepprg=rg\ --vimgrep\ --no-heading
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
-
-  let g:ackprg = 'rg --vimgrep --no-heading'
-elseif executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  " Use ag over ack
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 let g:syntastic_mode_map={ "mode": "passive" }
 
@@ -215,33 +239,176 @@ nmap <silent> <Leader>p :LeaderfMru<CR>
 nmap <silent> <Leader>h :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
 
 " System Settings  ----------------------------------------------------------{{{
-  set noswapfile
+set noswapfile
 " {{{
 
 " drmingdrmer/vim-toggle-quickfix
-  nmap <C-g><C-o> <Plug>window:quickfix:toggle
+nmap <C-g><C-o> <Plug>window:quickfix:toggle
 
 " Ctrl + S to save
 map <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>i
 
+" Ctrl + X to quit
+map <C-x> :q<CR>
+imap <C-x> <Esc>:q<CR>i
+
+" Ctrl + Q to quit all
+map <C-q> :qa<CR>
+imap <C-q> <Esc>:qa<CR>i
+
 " Ctrl + A to select all
 map <C-a> <esc>ggVG<CR>
 
+" Remove highlight
+map <C-h> :nohl<CR>
+
 if &diff
   nmap <silent> <C-c> :cquit<Cr>
-  colorscheme diffonly
+  colorscheme vim-monokai-tasty
 end
 
 " Only run linters that are specified here
 let g:ale_linters_explicit = 1
-let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+    \ 'ruby': ['rubocop'],
+    \ 'go': ['gopls'],
+    \ }
 
 " These options bellow to make sure we only run lint when saving file
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 
+" Ale auto fix on save
+let g:ale_fix_on_save = 1
+
+" Ale icon
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+
 " Load local directory .vimrc
 set exrc
 set secure
+
+" fzf
+noremap ~ :Files<CR>
+noremap ; :Buffers<CR>
+
+" bind \ (backward slash) to grep shortcut
+nnoremap K :Ag <C-r><C-W><CR>
+nnoremap <C-k> /<C-R><C-W><CR>
+nnoremap \ :Ag<SPACE>
+
+" coc.vim config
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+nmap <Leader>f :Format <CR>
+
+" Easymotion
+" s{char}{char} to move to {char}{char} over windows
+nmap <Leader>F <Plug>(easymotion-overwin-f)
+" Move to line over windows
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'monokai_tasty',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo', 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ }
+
+" Multi select
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+
+" fzf.vim
+" Customize fzf colors to match your color scheme
+let g:fzf_colors = {
+      \ 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'],
+      \ }
+
+" Auto close tag
+let g:closetag_filenames = '*.html,*.js,*.jsx,*.vue'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:jsx_ext_required = 0
+
+" nerdtree-git-plugin
+" Custom symbols
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : ":heavy_multiplication_x:",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Ignored"   : "☒",
+    \ "Unknown"   : "?",
+    \ }
+
+" Turn on Golang syntax
+let g:go_fold_enable = [
+  \ 'block',
+  \ 'import',
+  \ 'varconst',
+  \ 'package_comment'
+  \ ]
+
+let go_highlight_operators = [
+  \ 'array_whitespace_error',
+  \ 'chan_whitespace_error',
+  \ 'extra_types',
+  \ 'space_tab_error',
+  \ 'whitespace_error',
+  \ 'operators',
+  \ 'functions',
+  \ 'function_parameters',
+  \ 'function_calls',
+  \ 'types',
+  \ 'fields',
+  \ 'build_constraints',
+  \ 'generate_tags',
+  \ 'string_spellcheck',
+  \ 'format_strings',
+  \ 'variable_declarations',
+  \ 'variable_assignments',
+  \ 'diagnostic_errors',
+  \ 'diagnostic_warnings'
+  \ ]
+
+for i in go_highlight_operators
+  let g:go_highlight_{i} = 1
+endfor
