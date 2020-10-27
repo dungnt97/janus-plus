@@ -83,12 +83,12 @@ installer](https://github.com/carlhuda/janus/blob/master/bootstrap.sh)
 Janus.
 
 ```bash
-$ curl -L https://raw.github.com/remitano/janus-plus/master/bootstrap.rb | ruby
+$ curl -L https://raw.github.com/dungngo97/janus-plus/master/bootstrap.rb | ruby
 ```
 To force an install over existing default janus distribution
 
 ```bash
-$ curl -L https://raw.github.com/remitano/janus-plus/master/bootstrap.rb | FORCED=1 ruby
+$ curl -L https://raw.github.com/dungngo97/janus-plus/master/bootstrap.rb | FORCED=1 ruby
 ```
 
 ## Customization
