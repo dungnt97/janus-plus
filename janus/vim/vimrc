@@ -412,3 +412,17 @@ let go_highlight_operators = [
 for i in go_highlight_operators
   let g:go_highlight_{i} = 1
 endfor
+
+" Golang Debug Shortcuts
+map <F2> :GoDebugTest<CR>
+map <F5> :GoDebugContinue<CR>
+map <F9> :GoDebugBreakpoint<CR>
+map <F10> :GoDebugNext<CR>
+map <F11> :GoDebugStep<CR>
+map <F12> :GoDebugStop<CR>
+
+" Custom go-debug windows
+let g:go_debug_windows = {
+  \ 'vars':       'rightbelow 60vnew',
+  \ 'stack':      'rightbelow 10new',
+  \ }
