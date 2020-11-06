@@ -263,6 +263,13 @@ map <C-a> <esc>ggVG<CR>
 " Remove highlight
 map <C-h> :nohl<CR>
 
+" Unmap ` char
+map ` <Nop>
+
+" Tab all select
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
 if &diff
   nmap <silent> <C-c> :cquit<Cr>
   colorscheme vim-monokai-tasty
@@ -290,6 +297,8 @@ let g:ale_sign_warning = '⚠️'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
+" make listchars
+autocmd vimenter * set listchars=tab:→\ ,extends:›,precedes:‹,space:·,trail:·
 
 " Load local directory .vimrc
 set exrc
@@ -426,3 +435,6 @@ let g:go_debug_windows = {
   \ 'vars':       'rightbelow 60vnew',
   \ 'stack':      'rightbelow 10new',
   \ }
+
+" Tagalong setting
+let g:tagalong_verbose = 1
