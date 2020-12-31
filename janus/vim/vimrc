@@ -202,6 +202,7 @@ let NERDTreeQuitOnOpen=1
 
 nmap <silent> <leader>N :NERDTreeFind<CR>
 map <silent> - :NERDTreeToggle<CR>
+map <C-o> :NERDTreeToggle %<CR>
 
 " Fix nerdtree syntax highlight too slow
 augroup nerdtreedisablecursorline
