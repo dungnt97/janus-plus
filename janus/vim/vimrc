@@ -123,6 +123,9 @@ Plug 'patstockwell/vim-monokai-tasty'
 " For golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" For rust
+Plug 'rust-lang/rust.vim'
+
 " For javascript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
@@ -281,6 +284,7 @@ let g:ale_linters = {
     \ 'javascript': ['eslint'],
     \ 'ruby': ['rubocop'],
     \ 'go': ['gopls'],
+    \ 'rust': ['analyzer'],
     \ }
 
 " These options bellow to make sure we only run lint when saving file
