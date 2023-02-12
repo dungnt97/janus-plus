@@ -133,6 +133,8 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
@@ -165,7 +167,7 @@ noremap R "_d
 nnoremap ; :
 
 " Leader
-let mapleader = ","
+let mapleader = "\<SPACE>"
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -217,6 +219,9 @@ augroup end
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = "left"
 
+" Comment code with Ctrl + m
+map <C-m> <plug>NERDCommenterToggle
+
 " .vimrc.after is loaded after the plugins have loaded
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
@@ -263,7 +268,7 @@ map <C-q> :qa<CR>
 imap <C-q> <Esc>:qa<CR>i
 
 " Ctrl + A to select all
-map <C-a> <esc>ggVG<CR>
+nnoremap <C-a> <esc>ggVG<CR>
 
 " Remove highlight
 map <C-h> :nohl<CR>
@@ -471,3 +476,4 @@ let g:rainbow_conf = {
   \		'nerdtree': 0,
   \	}
   \}
+
